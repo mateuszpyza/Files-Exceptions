@@ -24,11 +24,12 @@ public class ReadingData {
         }
         return "Problems with reading file";
     }
-    public static void reversText(String text){
-        int j=0;
-        char[] reverseText=text.toCharArray();
-        for(int i=text.length()-1;i>=0;i--){
-            reverseText[j]=text.toCharArray()[i];
+
+    public static void reversText(String text) {
+        int j = 0;
+        char[] reverseText = text.toCharArray();
+        for (int i = text.length() - 1; i >= 0; i--) {
+            reverseText[j] = text.toCharArray()[i];
             j++;
         }
         System.out.println(reverseText);
