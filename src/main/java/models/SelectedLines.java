@@ -11,13 +11,13 @@ public class SelectedLines {
             while (endIndex != -1) {
                 startIndex = text.indexOf("\n", startIndex);
                 endIndex = text.indexOf("\n", startIndex + 1);
-                if (endIndex == -1) {
+                if (endIndex == -1 && counter % 2 == 0) {
                     endIndex = text.length();
-                    System.out.println(text.substring(startIndex, endIndex));
+                    System.out.println(text.substring(startIndex + 1, endIndex));
                     break;
                 }
                 if (counter % 2 == 0) {
-                    System.out.println(text.substring(startIndex, endIndex + 1));
+                    System.out.println(text.substring(startIndex + 1, endIndex));
                 }
                 counter = counter + 1;
                 startIndex = startIndex + 1;
