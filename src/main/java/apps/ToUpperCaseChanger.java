@@ -12,10 +12,10 @@ public class ToUpperCaseChanger {
     }
 
     public static boolean reedToUpperCaseAndSave(String pathToRead, String pathToSave) {
-        return saveToFile(reedFile(pathToRead).toUpperCase(), pathToSave);
+        return saveToFile(readFile(pathToRead).toUpperCase(), pathToSave);
     }
 
-    public static String reedFile(String pathToFile) {
+    public static String readFile(String pathToFile) {
         try {
             return Files.readString(Path.of(pathToFile));
         } catch (IOException e) {
