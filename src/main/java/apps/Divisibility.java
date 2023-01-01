@@ -18,6 +18,8 @@ public class Divisibility {
         if (dividend % divisor != 0) {
             throw new MyCustomExceptions("IllegalArgumentException");
         }
+
+
         return true;
     }
 }
