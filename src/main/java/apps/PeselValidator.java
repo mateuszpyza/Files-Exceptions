@@ -4,27 +4,31 @@ import exeptions.MyCustomException;
 
 public class PeselValidator {
 
-    public static void validatePesel(String pesel) throws MyCustomException {
+    public static boolean validatePesel(String pesel) throws MyCustomException {
         try {
             if (pesel.length() != 11) {
-                throw new MyCustomException("Incorrect length PESEL");
+                System.out.println("Incorrect length PESEL");
+                return false;
             }
-            checkChar(pesel);
+            return checkChar(pesel);
         } catch (NullPointerException e) {
-            throw new MyCustomException("Input data problems");
+            System.out.println("Input data problems");
+            return false;
         }
 
     }
 
-    public static void checkChar(String pesel) throws MyCustomException {
+    public static boolean checkChar(String pesel) throws MyCustomException {
         char[] arrayPesel = pesel.toCharArray();
         for (int i = 0; i <= pesel.length() - 1; i++) {
             try {
                 Integer.parseInt(String.valueOf(arrayPesel[i]));
             } catch (NumberFormatException nfe) {
-                throw new MyCustomException("Input data problems");
+                System.out.println("Input data problems");
+                return false;
             }
         }
+        return true;
     }
 }
 
